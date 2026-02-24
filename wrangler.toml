@@ -1,0 +1,6 @@
+name = "hls-proxy"
+main = "worker.js"
+compatibility_date = "2023-10-30"
+
+[build]
+command = "npm install && npm run build"

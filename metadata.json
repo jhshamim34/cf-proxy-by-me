@@ -1,0 +1,5 @@
+{
+  "name": "HLS Proxy Player",
+  "description": "A Node.js proxy for HLS streams to bypass hotlinking restrictions, with a frontend player.",
+  "requestFramePermissions": []
+}
