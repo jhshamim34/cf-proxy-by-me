@@ -27,8 +27,8 @@ app.get('/proxy', async (req, res) => {
     const targetUrl = Buffer.from(encodedUrl, 'base64').toString('utf-8');
     
     const headers = {
-      'Referer': 'https://megacloud.com/',
-      'Origin': 'https://megacloud.com',
+      'Referer': 'https://vidwish.live/',
+      'Origin': 'https://vidwish.live',
       'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
       'Accept': '*/*',
       'Accept-Language': 'en-US,en;q=0.9'

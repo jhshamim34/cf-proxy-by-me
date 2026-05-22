@@ -26,12 +26,26 @@ export default function App() {
       hls.loadSource(proxyUrl);
       hls.attachMedia(videoRef.current);
       hls.on(Hls.Events.MANIFEST_PARSED, () => {
-        videoRef.current?.play().catch(e => console.error('Playback error:', e));
+        const playPromise = videoRef.current?.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(e => {
+            if (e.name !== 'AbortError') {
+              console.error('Playback error:', e.message);
+            }
+          });
+        }
       });
     } else if (videoRef.current.canPlayType('application/vnd.apple.mpegurl')) {
       videoRef.current.src = proxyUrl;
       videoRef.current.addEventListener('loadedmetadata', () => {
-        videoRef.current?.play().catch(e => console.error('Playback error:', e));
+        const playPromise = videoRef.current?.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(e => {
+            if (e.name !== 'AbortError') {
+              console.error('Playback error:', e.message);
+            }
+          });
+        }
       });
     }
   };
